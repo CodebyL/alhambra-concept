@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alhambra Marine Repairs (website concept)</title>
+<meta name="description" content="Website concept for Alhambra Marine Repairs, boat engine repair and service with Scott at Westin's Marine Center, 69 River Rd, Sayville, NY. Rated 5.0 on Google.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --navy:#0f2a4a;--navy2:#173a63;--chart:#d9e6ee;--water:#e6eff4;--sail:#f8f5ee;--paper:#fbf9f4;
+ --red:#c2302a;--red-d:#a3241f;--brass:#b8913f;--brass-d:#7d6022;--ink:#14243a;--muted:#4b5a6c;--rule:#c4cfd8;
+ --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:32px;--s6:48px;--s7:72px;--s8:112px;
+ --wrap:1200px;
+ --serif:"Spectral",Georgia,"Times New Roman",serif;--body:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;font-family:var(--body);font-size:17.5px;line-height:1.62;color:var(--ink);background:var(--paper);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.navy :focus-visible{outline-color:#f2c86b}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s4)}
+.skip{position:absolute;left:-999px;top:0;background:var(--red);color:#fff;padding:var(--s2) var(--s3);z-index:99}
+.skip:focus{left:var(--s3);top:var(--s3)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;font-style:normal;margin:0;line-height:1.08;letter-spacing:-.01em}
+p{margin:0 0 var(--s3)}
+.coord{font-family:var(--body);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red-d);margin:0 0 var(--s3);font-weight:500}
+.navy .coord{color:#f2a49f}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:52px;padding:0 var(--s4);font-family:var(--body);font-weight:500;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;border-radius:2px;transition:background .2s,color .2s}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d)}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy2)}
+.btn-line{border-color:var(--navy);color:var(--navy);background:transparent}.btn-line:hover{background:var(--navy);color:#fff}
+.btn-sail{border-color:#fff;color:#fff}.btn-sail:hover{background:rgba(255,255,255,.1)}
+
+.concept{background:var(--navy);color:#dfe7ef;font-size:.84rem;text-align:center;padding:var(--s2) var(--s3)}
+.concept a{color:#f2c86b}
+
+header.site{background:var(--paper);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:40}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);min-height:78px}
+.brand{display:flex;align-items:center;gap:var(--s3);text-decoration:none}
+.brand svg{width:44px;height:44px;flex:none}
+.brand b{font-family:var(--serif);font-weight:700;font-size:1.4rem;display:block;line-height:1.05;color:var(--navy)}
+.brand small{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+nav.main ul{display:flex;list-style:none;margin:0;padding:0}
+nav.main a{display:flex;align-items:center;min-height:48px;padding:0 var(--s3);text-decoration:none;font-size:.97rem;color:var(--ink)}
+nav.main a:hover{color:var(--red-d);text-decoration:underline;text-underline-offset:6px}
+.hdr-call{display:flex;align-items:center;gap:var(--s2);min-height:48px;padding:0 var(--s4);text-decoration:none;background:var(--red);color:#fff;font-weight:500;white-space:nowrap;border-radius:2px}
+.hdr-call:hover{background:var(--red-d)}
+.menu-btn{display:none;min-width:48px;min-height:48px;background:none;border:2px solid var(--navy);color:var(--navy);cursor:pointer;font:500 .95rem var(--body);padding:0 var(--s3);border-radius:2px}
+
+/* chart hero */
+.hero{padding:var(--s6) 0 var(--s7)}
+.chart{position:relative;background:var(--water);border:10px solid transparent;border-image:repeating-linear-gradient(90deg,var(--navy) 0 28px,var(--sail) 28px 56px) 10;outline:1px solid var(--navy);outline-offset:-1px}
+.chart-in{position:relative;display:grid;grid-template-columns:1.05fr 1fr;min-height:560px;background:
+ linear-gradient(var(--water),var(--water)) padding-box;}
+.chart-in::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(15,42,74,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(15,42,74,.08) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.hero-text{position:relative;z-index:2;padding:var(--s7) var(--s6);display:flex;flex-direction:column;justify-content:center;background:rgba(248,245,238,.92);border-right:1px solid var(--rule)}
+.hero h1{font-size:clamp(2.6rem,5.2vw,4.6rem);color:var(--navy);font-weight:600}
+.hero h1 b{color:var(--red);font-weight:600}
+.hero .lede{font-size:1.18rem;color:var(--muted);margin:var(--s4) 0 var(--s5);max-width:36ch}
+.actions{display:flex;flex-wrap:wrap;gap:var(--s3)}
+.hero-art{position:relative;z-index:1}
+.hero-art svg{position:absolute;inset:0;width:100%;height:100%}
+.chart-note{position:absolute;right:var(--s3);bottom:var(--s2);z-index:3;font-size:.72rem;color:var(--muted);letter-spacing:.06em;background:rgba(230,239,244,.9);padding:2px var(--s2)}
+
+/* tide table proof */
+.tide{margin-top:var(--s5);display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--navy);border-bottom:1px solid var(--navy)}
+.tide div{padding:var(--s3) var(--s4);border-left:1px solid var(--rule)}
+.tide div:first-child{border-left:0}
+.tide dt{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tide dd{margin:var(--s1) 0 0;font-family:var(--serif);font-size:1.7rem;font-weight:600;color:var(--navy);line-height:1.15}
+.tide dd small{font-family:var(--body);font-size:.9rem;color:var(--muted);font-weight:400}
+
+section{scroll-margin-top:90px}
+.sec{padding:var(--s8) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);align-items:end;margin-bottom:var(--s6)}
+.sec-head h2{font-size:clamp(2.2rem,4vw,3.4rem);color:var(--navy)}
+.sec-head p{color:var(--muted);margin:0;max-width:46ch}
+
+/* scott story */
+.story{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--s7);align-items:center}
+.route{background:var(--sail);border:1px solid var(--rule);padding:var(--s4)}
+.route svg{width:100%;height:auto;display:block}
+.story h2{font-size:clamp(2.2rem,4vw,3.4rem);color:var(--navy);margin-bottom:var(--s4)}
+.story p{color:var(--muted);max-width:52ch}
+.story p.big{font-family:var(--serif);font-size:1.45rem;color:var(--ink);line-height:1.35}
+
+/* services table */
+.navy{background:var(--navy);color:#e8eef4}
+.navy .sec-head h2{color:#fff}
+.navy .sec-head p{color:#c3cfdc}
+table.svc{width:100%;border-collapse:collapse}
+table.svc th{text-align:left;font-weight:500;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#a9bacb;padding:0 var(--s3) var(--s3) 0;border-bottom:2px solid #f8f5ee}
+table.svc td{padding:var(--s4) var(--s3) var(--s4) 0;border-bottom:1px solid #2f4b70;vertical-align:top}
+table.svc td.n{font-family:var(--serif);color:#f2c86b;font-size:1.1rem;width:64px}
+table.svc td h3{font-size:1.5rem;color:#fff}
+table.svc td.when{color:#f8f5ee;white-space:nowrap;font-weight:500}
+table.svc td p{margin:0;color:#c3cfdc;max-width:48ch}
+.flagset{display:flex;gap:2px}
+.flagset i{width:14px;height:14px;display:block}
+
+/* season tool */
+.tool{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--s6);align-items:start}
+.curve{background:var(--sail);border:1px solid var(--rule);padding:var(--s4) var(--s4) var(--s3)}
+.curve svg{width:100%;height:auto;display:block}
+.months{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;margin-top:var(--s3)}
+.months button{min-height:44px;font:500 .82rem var(--body);background:#fff;border:1px solid var(--rule);color:var(--ink);cursor:pointer;padding:0}
+.months button[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.months button:hover{border-color:var(--navy)}
+.now-card{border:2px solid var(--navy);background:#fff}
+.now-top{background:var(--navy);color:#fff;padding:var(--s4)}
+.now-top .coord{color:#f2a49f;margin-bottom:var(--s2)}
+.now-top h3{font-size:2rem;color:#fff}
+.now-body{padding:var(--s4)}
+.now-body ul{list-style:none;padding:0;margin:0 0 var(--s4)}
+.now-body li{padding:var(--s2) 0 var(--s2) var(--s5);border-bottom:1px dashed var(--rule);position:relative}
+.now-body li::before{content:"";position:absolute;left:0;top:14px;width:16px;height:16px;border:2px solid var(--navy);border-radius:50%}
+.next{font-size:.95rem;color:var(--muted);margin-bottom:var(--s4)}
+.next b{color:var(--ink)}
+.sample{font-size:.88rem;color:var(--muted);margin-top:var(--s3)}
+
+/* logbook */
+.log{background:var(--sail);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.entries{display:grid;grid-template-columns:1.25fr 1fr;gap:var(--s4)}
+.entry{background:#fff;border:1px solid var(--rule);margin:0;padding:var(--s5);position:relative;display:flex;flex-direction:column;justify-content:space-between}
+.entry::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--navy)}
+.entry.lead{grid-row:span 2;background:var(--navy);color:#fff;border-color:var(--navy)}
+.entry.lead::before{background:var(--red)}
+.entry .log-l{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s3)}
+.entry.lead .log-l{color:#a9bacb}
+.entry blockquote{margin:0;font-family:var(--serif);font-size:1.5rem;line-height:1.3;font-weight:500}
+.entry.lead blockquote{font-size:clamp(2rem,3.4vw,2.8rem);line-height:1.15}
+.entry figcaption{margin-top:var(--s4);font-size:.95rem;color:var(--muted)}
+.entry.lead figcaption{color:#c3cfdc}
+.entry.lead big{display:block;font-family:var(--serif);font-size:6rem;line-height:1;color:#f2c86b;font-weight:600;margin-bottom:var(--s2)}
+
+/* find us */
+.find{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);align-items:start}
+.find h2{font-size:clamp(2.2rem,4vw,3.4rem);color:var(--navy)}
+.ledger{border-top:2px solid var(--navy);margin-top:var(--s4)}
+.ledger div{display:grid;grid-template-columns:140px 1fr;gap:var(--s3);padding:var(--s3) 0;border-bottom:1px solid var(--rule)}
+.ledger dt{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.ledger dd{margin:0;font-weight:500}
+.formbox{background:#fff;border:1px solid var(--rule);border-top:6px solid var(--red);padding:var(--s5)}
+.formbox h3{font-size:1.7rem;color:var(--navy);margin-bottom:var(--s4)}
+.field{display:grid;gap:var(--s1);margin-bottom:var(--s3)}
+.field label{font-weight:500;font-size:.95rem}
+.field input,.field select,.field textarea{font:inherit;font-size:1rem;min-height:50px;padding:var(--s2) var(--s3);border:1px solid #8fa1b3;border-radius:2px;background:#fff;color:var(--ink);width:100%}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--navy)}
+.field.err input,.field.err select,.field.err textarea{border-color:var(--red-d)}
+.errmsg{display:none;color:var(--red-d);font-size:.86rem}
+.field.err .errmsg{display:block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.demo-note{font-size:.86rem;color:var(--muted);margin-top:var(--s2)}
+.done{padding:var(--s5);background:var(--water);border:1px solid var(--navy)}
+.done h3{font-size:1.7rem;color:var(--navy);margin-bottom:var(--s2)}
+
+footer{background:var(--navy);color:#cfd9e4;padding:var(--s7) 0 var(--s6);font-size:.95rem}
+.ft{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:var(--s5);padding-bottom:var(--s5);border-bottom:1px solid #2f4b70}
+footer .brand b{color:#fff}footer .brand small{color:#a9bacb}
+footer a{color:#fff}
+.disc{font-size:.85rem;color:#a9bacb;margin-top:var(--s4);max-width:110ch}
+.mcall{display:none}
+
+@media (max-width:1040px){
+ .menu-btn{display:inline-flex;align-items:center}
+ nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--rule)}
+ nav.main.open{display:block}
+ nav.main ul{flex-direction:column;padding:var(--s2) var(--s4) var(--s4)}
+ nav.main a{min-height:52px;border-bottom:1px solid var(--rule)}
+}
+@media (max-width:900px){
+ .chart-in{grid-template-columns:1fr}
+ .hero-text{border-right:0;border-bottom:1px solid var(--rule);padding:var(--s6) var(--s5)}
+ .hero-art{min-height:360px}
+ .tide{grid-template-columns:1fr 1fr}
+ .tide div:nth-child(3){border-left:0}
+ .tide div:nth-child(n+3){border-top:1px solid var(--rule)}
+ .sec-head,.story,.tool,.find{grid-template-columns:1fr}
+ .story{gap:var(--s5)}
+ .entries{grid-template-columns:1fr}
+ .entry.lead{grid-row:auto}
+ .ft{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+ body{font-size:17px}
+ .wrap{padding:0 var(--s3)}
+ .hdr-call{display:none}
+ .brand b{font-size:1.15rem}
+ .sec{padding:var(--s7) 0}
+ .hero{padding:var(--s4) 0 var(--s6)}
+ .hero-text{padding:var(--s5) var(--s4)}
+ .hero-art{min-height:420px}
+ .chart{border-width:8px}
+ table.svc thead{display:none}
+ table.svc,table.svc tbody,table.svc tr,table.svc td{display:block;width:100%}
+ table.svc tr{border-bottom:1px solid #2f4b70;padding:var(--s4) 0}
+ table.svc td{border:0;padding:var(--s1) 0}
+ table.svc td.n{width:auto}
+ .months{grid-template-columns:repeat(6,1fr)}
+ .two{grid-template-columns:1fr}
+ .ledger div{grid-template-columns:1fr;gap:0}
+ .formbox,.entry{padding:var(--s4)}
+ .entry.lead big{font-size:4.5rem}
+ .ft{grid-template-columns:1fr}
+ .mcall{display:flex;position:fixed;left:var(--s3);right:var(--s3);bottom:var(--s3);z-index:50;min-height:56px;background:var(--red);color:#fff;align-items:center;justify-content:center;gap:var(--s2);text-decoration:none;font-weight:500;border-radius:2px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+ footer{padding-bottom:110px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="concept">Website concept by <a href="https://www.lisettecolon.com">Lisette Colon</a>. A sample, not the official Alhambra Marine Repairs site.</div>
+
+<header class="site">
+ <div class="wrap hdr">
+  <a class="brand" href="#top" aria-label="Alhambra Marine Repairs home">
+   <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" fill="#0f2a4a"/><path d="M0 0 L44 44 M44 0 L0 44" stroke="#c2302a" stroke-width="7"/><rect x="14" y="14" width="16" height="16" fill="#f8f5ee"/><circle cx="22" cy="22" r="4" fill="#b8913f"/></svg>
+   <span><b>Alhambra Marine</b><small>Repairs, Sayville</small></span>
+  </a>
+  <nav class="main" id="nav" aria-label="Main">
+   <ul>
+    <li><a href="#scott">Meet Scott</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#season">What to book now</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#find">Find us</a></li>
+   </ul>
+  </nav>
+  <a class="hdr-call" href="tel:+15167852080"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>(516) 785-2080</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+ </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+ <div class="wrap">
+  <div class="chart">
+   <div class="chart-in">
+    <div class="hero-text">
+     <p class="coord">Westin's Marine Center, 69 River Rd, Sayville</p>
+     <h1>Honest engine work for <b>your boat</b>, from a mechanic you can talk to.</h1>
+     <p class="lede">Alhambra Marine Repairs is Scott's shop for boat engine repair and service. Same hands, same straight answers, now in Sayville.</p>
+     <div class="actions">
+      <a class="btn btn-red" href="tel:+15167852080">Call (516) 785-2080</a>
+      <a class="btn btn-line" href="#book">Request service</a>
+     </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+     <svg viewBox="0 0 420 560" preserveAspectRatio="xMidYMid slice">
+      <!-- land -->
+      <path d="M0 0 H520 V150 C460 170 420 140 380 175 C340 210 300 190 260 220 C220 250 180 230 140 260 C100 290 50 270 0 300Z" fill="#efe6cf"/>
+      <path d="M0 0 H520 V150 C460 170 420 140 380 175 C340 210 300 190 260 220 C220 250 180 230 140 260 C100 290 50 270 0 300" fill="none" stroke="#8a7a52" stroke-width="2"/>
+      <!-- river channel -->
+      <path d="M300 0 C310 60 290 120 300 195" fill="none" stroke="#e6eff4" stroke-width="22"/>
+      <path d="M300 0 C310 60 290 120 300 195" fill="none" stroke="#8a7a52" stroke-width="1" stroke-dasharray="0" opacity=".6"/>
+      <!-- depth contours -->
+      <g fill="none" stroke="#7fa6c4" stroke-width="1.2">
+       <path d="M0 340 C60 320 120 330 170 300 C230 270 270 280 320 250 C370 220 420 230 520 200"/>
+       <path d="M0 400 C80 380 140 390 200 360 C260 330 320 340 380 310 C430 290 480 300 520 280" stroke-dasharray="6 5"/>
+       <path d="M0 470 C90 450 160 460 230 430 C300 400 360 410 430 380 C470 365 500 370 520 360" stroke-dasharray="2 5"/>
+      </g>
+      <rect x="0" y="300" width="520" height="0" />
+      <!-- soundings -->
+      <g font-family="Spectral,Georgia,serif" font-size="14" fill="#2c4f74">
+       <text x="60" y="350">3</text><text x="140" y="372">4</text><text x="230" y="330">4</text><text x="330" y="300">5</text><text x="430" y="270">6</text>
+       <text x="40" y="430">6</text><text x="160" y="418">7</text><text x="270" y="392">7</text><text x="380" y="360">8</text><text x="480" y="330">9</text>
+       <text x="90" y="500">9</text><text x="200" y="486">11</text><text x="250" y="520">12</text>
+      </g>
+      <!-- marina pin -->
+      <g transform="translate(300 196)" id="pin">
+       <circle r="22" fill="none" stroke="#c2302a" stroke-width="2"/><circle r="7" fill="#c2302a"/>
+       <line x1="0" y1="-38" x2="0" y2="-22" stroke="#c2302a" stroke-width="2"/><line x1="0" y1="22" x2="0" y2="38" stroke="#c2302a" stroke-width="2"/>
+       <rect x="-190" y="-46" width="150" height="40" fill="#0f2a4a"/>
+       <text x="-178" y="-30" font-family="Rubik,Arial,sans-serif" font-size="11" fill="#f2c86b" letter-spacing="1.5">ALHAMBRA MARINE</text>
+       <text x="-178" y="-15" font-family="Rubik,Arial,sans-serif" font-size="11" fill="#fff">69 River Rd</text>
+      </g>
+      <!-- buoys -->
+      <g><path d="M240 288 l7 -16 l7 16z" fill="#c2302a"/><rect x="232" y="274" width="8" height="14" fill="#2f7a4a"/></g>
+      <!-- compass rose -->
+      <g transform="translate(330 478)">
+       <circle r="62" fill="none" stroke="#0f2a4a" stroke-width="1.2"/><circle r="52" fill="none" stroke="#0f2a4a" stroke-width=".8" stroke-dasharray="1 4"/>
+       <g fill="#0f2a4a"><path d="M0 -60 L7 0 L0 6 L-7 0Z"/><path d="M0 60 L7 0 L0 -6 L-7 0Z" fill="#f8f5ee" stroke="#0f2a4a"/><path d="M60 0 L0 7 L-6 0 L0 -7Z" fill="#f8f5ee" stroke="#0f2a4a"/><path d="M-60 0 L0 7 L6 0 L0 -7Z"/></g>
+       <path d="M0 -60 L7 0 L0 6Z" fill="#c2302a"/>
+       <text y="-68" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="14" font-weight="600" fill="#0f2a4a">N</text>
+      </g>
+      <!-- outboard engine plate -->
+      <g transform="translate(36 340)">
+       <rect x="-10" y="-10" width="170" height="190" fill="#f8f5ee" stroke="#0f2a4a"/>
+       <path d="M30 20 h70 a20 20 0 0 1 20 20 v40 a10 10 0 0 1 -10 10 h-80 a10 10 0 0 1 -10 -10 v-50 a10 10 0 0 1 10 -10z" fill="#0f2a4a"/>
+       <rect x="34" y="34" width="62" height="6" fill="#b8913f"/>
+       <path d="M50 90 h40 l-4 50 h-32z" fill="#173a63"/>
+       <path d="M44 140 h52 v10 a10 10 0 0 1 -10 10 h-32 a10 10 0 0 1 -10 -10z" fill="#0f2a4a"/>
+       <g transform="translate(108 150)"><ellipse rx="6" ry="16" fill="#b8913f"/><ellipse rx="6" ry="16" fill="#b8913f" transform="rotate(60)"/><ellipse rx="6" ry="16" fill="#b8913f" transform="rotate(-60)"/></g>
+       <rect x="0" y="40" width="22" height="8" fill="#c2302a"/>
+       <text x="0" y="176" font-family="Rubik,Arial,sans-serif" font-size="10" fill="#4b5a6c" letter-spacing="1">FIG. 1, OUTBOARD</text>
+      </g>
+     </svg>
+    </div>
+    <span class="chart-note">Illustration only. Not for navigation.</span>
+   </div>
+  </div>
+  <dl class="tide">
+   <div><dt>Google rating</dt><dd>5.0 <small>from 30 reviews</small></dd></div>
+   <div><dt>Mechanic</dt><dd>Scott</dd></div>
+   <div><dt>Location</dt><dd>Sayville <small>River Rd</small></dd></div>
+   <div><dt>Open</dt><dd>Weekdays <small>until 5 PM</small></dd></div>
+  </dl>
+ </div>
+</section>
+
+<section class="sec" id="scott" style="padding-top:var(--s6)">
+ <div class="wrap story">
+  <div class="route" aria-hidden="true">
+   <svg viewBox="0 0 520 260">
+    <rect width="520" height="260" fill="#e6eff4"/>
+    <path d="M0 0 H520 V120 C440 130 380 110 300 125 C220 140 140 120 0 140Z" fill="#efe6cf" stroke="#8a7a52" stroke-width="1.5"/>
+    <path d="M110 150 C200 210 320 210 410 140" fill="none" stroke="#c2302a" stroke-width="2.5" stroke-dasharray="8 7"/>
+    <path d="M402 134 l12 4 l-6 11" fill="none" stroke="#c2302a" stroke-width="2.5"/>
+    <g font-family="Rubik,Arial,sans-serif" font-size="13" fill="#0f2a4a">
+     <circle cx="110" cy="130" r="7" fill="#f8f5ee" stroke="#0f2a4a" stroke-width="2"/><text x="78" y="105" font-weight="500">SEAFORD</text><text x="78" y="88" font-size="10" fill="#4b5a6c" letter-spacing="1">BEFORE</text>
+     <circle cx="410" cy="124" r="7" fill="#c2302a"/><text x="380" y="100" font-weight="500">SAYVILLE</text><text x="380" y="83" font-size="10" fill="#4b5a6c" letter-spacing="1">NOW</text>
+    </g>
+    <text x="260" y="235" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="14" fill="#2c4f74">Same mechanic. New dock.</text>
+   </svg>
+  </div>
+  <div>
+   <p class="coord">Meet the mechanic</p>
+   <h2>From Seaford to Sayville. Same mechanic.</h2>
+   <p class="big">Alhambra Marine Repairs moved from Seaford to Sayville and now works out of Westin's Marine Center on River Rd.</p>
+   <p>Reviews talk about the same things again and again: fair prices, honest answers and a gentleman who still works the old-fashioned way. One reviewer has been going to Scott for about 24 years.</p>
+   <a class="btn btn-navy" href="tel:+15167852080">Talk to Scott</a>
+  </div>
+ </div>
+</section>
+
+<section class="sec navy" id="services">
+ <div class="wrap">
+  <div class="sec-head">
+   <div><p class="coord">Services</p><h2>Engine work, through the whole season.</h2></div>
+   <p>Boat engine repair and service. Call with your engine make and what it's doing, and Scott will tell you what it likely needs.</p>
+  </div>
+  <table class="svc">
+   <thead><tr><th scope="col">No.</th><th scope="col">Service</th><th scope="col">What it covers</th><th scope="col">Best time</th></tr></thead>
+   <tbody>
+    <tr><td class="n">01</td><td><h3>Engine repair</h3></td><td><p>Won't start, runs rough, overheats, loses power. Diagnosis and repair to get you back on the water.</p></td><td class="when">Any time</td></tr>
+    <tr><td class="n">02</td><td><h3>Engine service</h3></td><td><p>Routine maintenance that keeps a good engine running well and catches small problems early.</p></td><td class="when">Season long</td></tr>
+    <tr><td class="n">03</td><td><h3>Spring commissioning</h3></td><td><p>Getting the engine ready after winter storage so the first trip out goes smoothly.</p></td><td class="when">Mar to May</td></tr>
+    <tr><td class="n">04</td><td><h3>Mid-season service</h3></td><td><p>A check partway through summer, when boats are running the most hours.</p></td><td class="when">Jun to Aug</td></tr>
+    <tr><td class="n">05</td><td><h3>Fall winterization</h3></td><td><p>Protecting the engine before it sits for the cold months.</p></td><td class="when">Sep to Nov</td></tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+
+<section class="sec" id="season">
+ <div class="wrap">
+  <div class="sec-head">
+   <div><p class="coord">Sample tool</p><h2>What should you book right now?</h2></div>
+   <p>The boating year runs like a tide. Pick a month, or use today's date, to see which service to book and what it usually covers.</p>
+  </div>
+  <div class="tool">
+   <div class="curve">
+    <svg id="tidesvg" viewBox="0 0 600 220" role="img" aria-label="Boating season curve with the selected month marked">
+     <rect x="0" y="0" width="150" height="190" fill="#e6eff4"/>
+     <rect x="150" y="0" width="150" height="190" fill="#f3e7e6"/>
+     <rect x="300" y="0" width="150" height="190" fill="#e6eff4"/>
+     <rect x="450" y="0" width="150" height="190" fill="#efeadf"/>
+     <g font-family="Rubik,Arial,sans-serif" font-size="11" fill="#14243a" letter-spacing="1">
+      <text x="10" y="20">SPRING</text><text x="160" y="20">MID-SEASON</text><text x="310" y="20">FALL</text><text x="460" y="20">STORAGE</text>
+     </g>
+     <path id="tidepath" d="" fill="none" stroke="#0f2a4a" stroke-width="3"/>
+     <g id="tideticks" font-family="Rubik,Arial,sans-serif" font-size="11" fill="#4b5a6c" text-anchor="middle"></g>
+     <g id="marker"><line y1="28" y2="190" stroke="#c2302a" stroke-width="2"/><circle r="9" fill="#c2302a" stroke="#fff" stroke-width="3"/></g>
+    </svg>
+    <div class="months" id="months" role="group" aria-label="Pick a month"></div>
+   </div>
+   <div class="now-card" aria-live="polite">
+    <div class="now-top"><p class="coord" id="nowlabel">This month</p><h3 id="nowtitle">Book fall winterization</h3></div>
+    <div class="now-body">
+     <ul id="nowlist"></ul>
+     <p class="next" id="nownext"></p>
+     <a class="btn btn-red" href="#book" id="bookthis">Request this service</a>
+     <p class="sample">Sample feature. A general guide for Long Island boaters, not a quote or a schedule. Your boat and engine may need something different, so ask Scott.</p>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec log" id="reviews">
+ <div class="wrap">
+  <div class="sec-head">
+   <div><p class="coord">From the logbook</p><h2>5.0 on Google, from 30 reviews.</h2></div>
+   <p>Customers talk about honesty, fair prices and years of trust.</p>
+  </div>
+  <div class="entries">
+   <figure class="entry lead">
+    <div><p class="log-l">Log entry</p><big>24</big><blockquote>"I have been going to Scott for about 24 years now."</blockquote></div>
+    <figcaption>Donald M., Google review</figcaption>
+   </figure>
+   <figure class="entry">
+    <div><p class="log-l">Log entry</p><blockquote>"Honest fair prices I've been robbed before but this place is very honest"</blockquote></div>
+    <figcaption>Google review</figcaption>
+   </figure>
+   <figure class="entry">
+    <div><p class="log-l">Log entry</p><blockquote>"He is s true gentleman with a old fashioned work ethic."</blockquote></div>
+    <figcaption>Google review</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="find">
+ <div class="wrap find">
+  <div>
+   <p class="coord">Find us</p>
+   <h2>Inside Westin's Marine Center.</h2>
+   <dl class="ledger">
+    <div><dt>Address</dt><dd>69 River Rd<br>Sayville, NY 11782</dd></div>
+    <div><dt>Inside</dt><dd>Westin's Marine Center</dd></div>
+    <div><dt>Hours</dt><dd>Weekdays, closes at 5 PM</dd></div>
+    <div><dt>Phone</dt><dd><a href="tel:+15167852080">(516) 785-2080</a></dd></div>
+    <div><dt>Directions</dt><dd><a href="https://maps.google.com/?q=69+River+Rd+Sayville+NY+11782">Open in Google Maps</a></dd></div>
+   </dl>
+  </div>
+  <div class="formbox" id="book">
+   <form class="demo" novalidate>
+    <h3>Request service</h3>
+    <div class="two">
+     <div class="field"><label for="f-name">Name</label><input id="f-name" required autocomplete="name"><span class="errmsg">Please add your name.</span></div>
+     <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" required autocomplete="tel"><span class="errmsg">Please add a phone number.</span></div>
+    </div>
+    <div class="two">
+     <div class="field"><label for="f-boat">Boat</label><input id="f-boat" placeholder="Make and length"></div>
+     <div class="field"><label for="f-engine">Engine</label><input id="f-engine" required placeholder="Make, model, outboard or inboard"><span class="errmsg">Please tell us about the engine.</span></div>
+    </div>
+    <div class="field"><label for="f-svc">Service</label><select id="f-svc" required><option value="">Choose one</option><option>Engine repair</option><option>Engine service</option><option>Spring commissioning</option><option>Mid-season service</option><option>Fall winterization</option><option>Not sure</option></select><span class="errmsg">Please choose a service.</span></div>
+    <div class="field"><label for="f-msg">What's going on?</label><textarea id="f-msg" placeholder="Where the boat is, what you're noticing, when you need it"></textarea></div>
+    <button class="btn btn-red" type="submit">Send request</button>
+    <p class="demo-note">Demo form. This is a website concept. Nothing is sent or saved.</p>
+   </form>
+   <div class="done" hidden tabindex="-1">
+    <h3>Demo complete.</h3>
+    <p>On the live site, this request would go to Alhambra Marine Repairs. In this concept, nothing was sent or saved.</p>
+    <button class="btn btn-line" type="button" data-reset>Start over</button>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="ft">
+   <div><a class="brand" href="#top"><svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" fill="#173a63"/><path d="M0 0 L44 44 M44 0 L0 44" stroke="#c2302a" stroke-width="7"/><rect x="14" y="14" width="16" height="16" fill="#f8f5ee"/><circle cx="22" cy="22" r="4" fill="#b8913f"/></svg><span><b>Alhambra Marine</b><small>Repairs, Sayville</small></span></a><p style="margin-top:var(--s3)">Boat engine repair and service with Scott.</p></div>
+   <div><p><b style="color:#fff">Shop</b><br>Westin's Marine Center<br>69 River Rd, Sayville, NY 11782</p></div>
+   <div><p><b style="color:#fff">Call</b><br><a href="tel:+15167852080">(516) 785-2080</a><br>Weekdays, until 5 PM</p></div>
+  </div>
+  <p class="disc">Independent website concept designed by Lisette Colon. Not affiliated with or approved by Alhambra Marine Repairs. Address, hours, rating and review quotes are from the business's public Google listing, checked October 2026. The service list (repair, routine service, commissioning, mid-season service, winterization), service timing and descriptions are typical for the trade and need to be confirmed with the owner. The chart, route map and engine drawings are illustrations, not for navigation. The season checklist tool is a sample feature created for this concept. Opening time is not listed and should be confirmed.</p>
+ </div>
+</footer>
+<a class="mcall" href="tel:+15167852080"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Call Alhambra Marine</a>
+
+<script>
+(function(){
+ var mb=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+ mb.addEventListener('click',function(){var o=mb.getAttribute('aria-expanded')==='true';mb.setAttribute('aria-expanded',!o);mb.textContent=o?'Menu':'Close';nav.classList.toggle('open',!o)});
+ nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mb.setAttribute('aria-expanded','false');mb.textContent='Menu';nav.classList.remove('open')})});
+
+ // season tool. Columns ordered Mar..Feb so phases sit together.
+ var order=[2,3,4,5,6,7,8,9,10,11,0,1],MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],FULL=['January','February','March','April','May','June','July','August','September','October','November','December'];
+ var phases={
+  spring:{t:'Book spring commissioning',svc:'Spring commissioning',items:['Engine checked over after winter storage','Fluids, belts and hoses looked at','Battery and electrical check','Test run before the first trip'],next:'Coming up: <b>mid-season service</b> in June.'},
+  mid:{t:'Book a mid-season service',svc:'Mid-season service',items:['Check on an engine running its most hours','Cooling system and water flow check','Listen for anything new before a long weekend','Small fixes before they turn into big ones'],next:'Coming up: <b>fall winterization</b> starts in September. Spots fill as the season ends.'},
+  fall:{t:'Book fall winterization',svc:'Fall winterization',items:['Engine protected before it sits for the cold months','Fuel system prepared for storage','Fluids and cooling system readied for freezing weather','Notes on anything to fix before spring'],next:'Coming up: <b>spring commissioning</b>. Getting on the list early means less waiting in April.'},
+  winter:{t:'Plan spring commissioning now',svc:'Spring commissioning',items:['Boat is in storage, a good time to plan','Tell Scott about anything you noticed last season','Get on the spring list before the rush','Repairs can be lined up before launch'],next:'Coming up: <b>spring commissioning</b> from March.'}
+ };
+ function phaseOf(m){return m>=2&&m<=4?'spring':m>=5&&m<=7?'mid':m>=8&&m<=10?'fall':'winter'}
+ var W=600,colW=W/12,path='';
+ for(var x=0;x<=W;x+=6){var y=110-55*Math.sin((x/W)*Math.PI*2-Math.PI/2.4);path+=(x?'L':'M')+x+' '+y.toFixed(1)}
+ document.getElementById('tidepath').setAttribute('d',path);
+ var ticks=document.getElementById('tideticks'),ns='http://www.w3.org/2000/svg';
+ order.forEach(function(m,i){var t=document.createElementNS(ns,'text');t.setAttribute('x',colW*i+colW/2);t.setAttribute('y',208);t.textContent=MN[m];ticks.appendChild(t)});
+ function yAt(x){return 110-55*Math.sin((x/W)*Math.PI*2-Math.PI/2.4)}
+ var mbox=document.getElementById('months'),today=new Date().getMonth(),cur=today;
+ order.forEach(function(m){var b=document.createElement('button');b.type='button';b.textContent=MN[m];b.dataset.m=m;b.setAttribute('aria-pressed',m===cur);b.setAttribute('aria-label',FULL[m]+(m===today?' (this month)':''));b.onclick=function(){cur=m;render()};mbox.appendChild(b)});
+ function render(){
+  mbox.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.m===cur)});
+  var i=order.indexOf(cur),x=colW*i+colW/2,mk=document.getElementById('marker');
+  mk.setAttribute('transform','translate('+x+' 0)');mk.querySelector('circle').setAttribute('cy',yAt(x));
+  var p=phases[phaseOf(cur)];
+  document.getElementById('nowlabel').textContent=(cur===today?'This month, ':'')+FULL[cur];
+  document.getElementById('nowtitle').textContent=p.t;
+  document.getElementById('nowlist').innerHTML=p.items.map(function(s){return '<li>'+s+'</li>'}).join('');
+  document.getElementById('nownext').innerHTML=p.next;
+  document.getElementById('bookthis').dataset.svc=p.svc;
+ }
+ render();
+ document.getElementById('bookthis').addEventListener('click',function(){document.getElementById('f-svc').value=this.dataset.svc});
+
+ document.querySelectorAll('form.demo').forEach(function(f){
+  var done=f.parentElement.querySelector('.done');
+  f.addEventListener('submit',function(e){
+   e.preventDefault();var first=null;
+   f.querySelectorAll('[required]').forEach(function(el){var bad=!el.value.trim()||!el.checkValidity();el.closest('.field').classList.toggle('err',bad);el.setAttribute('aria-invalid',bad);if(bad&&!first)first=el});
+   if(first){first.focus();return}
+   f.hidden=true;done.hidden=false;done.focus();
+  });
+  done.querySelector('[data-reset]').addEventListener('click',function(){f.reset();done.hidden=true;f.hidden=false;f.querySelector('input').focus()});
+ });
+})();
+</script>
+</body>
+</html>
